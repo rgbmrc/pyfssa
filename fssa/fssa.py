@@ -316,7 +316,7 @@ def _select_mask(j, j_primes):
     ret = np.zeros_like(j_primes, dtype=bool)
     my_iprimes = np.invert(np.isnan(j_primes[:, j])).nonzero()[0]
     my_jprimes = j_primes[my_iprimes, j]
-    my_jprimes = my_jprimes.astype(np.int)
+    my_jprimes = my_jprimes.astype(int)
     ret[my_iprimes, my_jprimes] = True
     ret[my_iprimes, my_jprimes + 1] = True
 
